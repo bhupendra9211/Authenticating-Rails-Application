@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :admin_users
+  root "home#index"
+  # devise_for :admin_users
   # devise_for :admin_users, path_names: {
   #   sign_in: "login"
   # }
-  devise_for :admin_users, controllers: {
-    sessions: "admin_users/sessions"
+  # devise_for :admin_users, controllers: {
+  #   passwords: "admin_users/passwords"
+  # }
+
+  devise_for :admin_users, path_names: {
+    sign_in: "login"
+  }, controllers: {
+    passwords: "admin_users/passwords"
   }
 
+  get 'custom_password_sent', to: 'static_pages#password_sent', as: :custom_password_sent
+
   # get "home/index"
-  root "home#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
