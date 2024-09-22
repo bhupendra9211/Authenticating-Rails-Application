@@ -30,6 +30,6 @@ class AdminUsers::PasswordsController < Devise::PasswordsController
   # The path used after sending reset password instructions
   def after_sending_reset_password_instructions_path_for(resource_name)
     # super(resource_name)
-    custom_password_sent_path
+    custom_password_sent_view_path
   end
 end
