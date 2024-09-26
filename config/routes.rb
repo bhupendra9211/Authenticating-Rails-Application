@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     passwords: "admin_users/passwords"
   }
 
-  get 'custom_password_sent', to: 'static_pages#password_sent', as: :custom_password_sent_view
+  # get 'custom_password_sent', to: 'static_pages#password_sent', as: :custom_password_sent_view
 
   # get "home/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
